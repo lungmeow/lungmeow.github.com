@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="author" content="lungmeow"><meta name="desciption" content="糟糕的不知道说什么的blog"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>svn post-commit lock(1)</title><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/normalize/3.0.3/normalize.min.css"><link rel="stylesheet" type="text/css" href="/css/carbon.css"><script defer="defer" src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script><script defer="defer" src="//cdn.jsdelivr.net/jquery.pjax/1.9.5/jquery.pjax.min.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.css" type="text/css" media="screen"><script defer="defer" type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>var performFancybox = true;</script><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/katex/0.5.0/katex.min.css"><script async="async" type="text/javascript" src="//cdn.jsdelivr.net/katex/0.5.0/katex.min.js"></script><script async="async" type="text/javascript" src="//cdn.jsdelivr.net/katex/0.5.0/contrib/auto-render.min.js"></script><script>var doRenderMath = 'katex';</script><script defer="defer" src="/js/carbon.js"></script></head><body><div id="container"><div id="banner"><h1 id="site-title"><a href="/">肺肺的小世界</a></h1><p id="site-subtitle">CC</p></div><div id="content"><div class="meta"><h2 class="article-title"><a href="/2016/01/13/svn-post-commit-lock-1">svn post-commit lock(1)</a></h2><div class="article-date"><a href="javascript:void(0);" class="extra-switch">2016-01-13</a></div></div><div class="extra"><span class="Tags">Tags: <a href="/tags/Ubuntu/">Ubuntu</a>, <a href="/tags/lock/">lock</a>, <a href="/tags/post-commit/">post-commit</a>, <a href="/tags/svn/">svn</a>, <a href="/tags/阿里云/">阿里云</a>.</span></div><div class="extra"><span class="Categorias">Categorias: 无.</span></div><div class="article-content"><div class="gallery"></div><p>好想吐槽为什么我电脑桌还没到<s>优速</s>已经战胜了李狗嗨啊于是补完又剧荒</p>
+<hr>
+<p>###以下正题</p>
+<hr>
+<p><img src="/img/2.png" alt=""></p>
+<p>我开始想有没有这样一个可能</p>
+<p>或者流程应该是这样走的<br>根据截图<br>提交应该是成功的</p>
+<p>然后触发post-commit<br>然后post-commit执行 update 到www 但是update好像并没有什么更新就被？lock了？<br>我再去看看钩子怎么走</p>
+<blockquote>
+<p>在执行commit操作之后会自动执行post-commit这个钩子程序。</p>
+</blockquote>
+<p>反省是不是之前的钩子写的太简略了【自我辩解不会脚本嘛】</p>
+<p><img src="/img/1.png" alt=""></p>
+<p>鱼唇的我还没有解决【内心戏十足的捂脸_(:з」∠)_】</p>
+<p><s>妈蛋</s>暂时只能手动cleanup了又不会写脚本QAQQ<br>【本来想的思路是在post-commit进行判断提交来源什么然后要是root就cleanup可是这会不会太简单粗暴了而且我又不会写【摔</p>
+<p>【后期还需要打log啦_(:з」∠)_<br><s>并还没有养成服务器打log的习惯真是作死</s></p>
+<p><strong><s>于是入的kpw终于到货又要好好看书下了一大堆TXTPDF其实我只是想从代码大全看起然而linux还在等着我然后又打开了python教程嘛电脑桌为什么你还没到是吃*了嘛摔</s></strong>  </p>
+<hr>
+<p>浏览器兼容性什么的真的real无力你为什么要用360为什么要用360为什么要用ie为什么不入chrome大法为什么不能升级你的浏览器QAQQ【哭</p>
+<hr>
+<p>haolewananmingtianqilaichiyao<br>明天再处理好了_(:з」∠)_</p>
+<p>暂时就是做出修改之后手动commit再手动cleanup  </p>
+<p>嘛</p>
+</div><nav class="pagination"><a id="left-navigator" href="/2016/01/21/2016-01-21/">2016-01-21</a><a id="right-navigator" href="/2015/11/23/try-again-post/">不知道第多少次的尝试QAQ</a></nav></div><nav id="footer"><ul id="footer-links"><li><a href="/about" class="zn">关于</a></li><li><a href="/archives" class="zn">所有文章</a></li><li><a href="/music" class="zn">MUSIC</a></li><li><a href="/atom.xml" class="zn">RSS</a></li><li><a href="https://icylogic.net" class="zn out-site">Theme.Carbon</a></li><li><a href="https://github.com/hexojs/hexo" class="zn out-site">Hexo</a></li></ul></nav></div></body></html>
